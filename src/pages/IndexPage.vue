@@ -14,7 +14,7 @@
         </div>
       </div>
 
-      <q-btn class="q-mt-md" color="primary" @click="dialog = true"
+      <q-btn class="q-mt-md" color="primary" @click="openDialog"
         >Open Dialog</q-btn
       >
 
@@ -36,42 +36,24 @@
         <a href="https://v3.vuejs.org/" target="_blank">Vue 3 Docs</a>
       </p>
     </div>
-    <q-dialog v-model="dialog">
-      <q-card class="dialog">
-        <q-card-section>
-          <div class="text-h6">Dialog</div>
-        </q-card-section>
-
-        <q-card-section class="text-center q-pa-lg">
-          <div v-if="!flagsReady">Loading...</div>
-          <div
-            v-else
-            :style="`font-size:24px; color: ${enabled ? 'green' : 'red'}`"
-          >
-            {{ enabled ? 'Feature is enabled!' : 'Feature is disabled!' }}
-            <div v-if="variant.enabled">
-              {{ variant.name }}
-            </div>
-          </div>
-        </q-card-section>
-
-        <q-card-actions align="right">
-          <q-btn flat label="OK" color="primary" v-close-popup />
-        </q-card-actions>
-      </q-card>
-    </q-dialog>
   </q-page>
 </template>
 
 <script setup lang="ts">
 import { useFlag, useFlagsStatus, useVariant } from '@unleash/proxy-client-vue';
-import { ref } from 'vue';
+import { useQuasar } from 'quasar';
+
+import DialogExample from '../components/DialogExample.vue';
 
 const enabled = useFlag('test-feature');
 const variant = useVariant('test-feature');
 const { flagsReady } = useFlagsStatus();
 
-const dialog = ref(false);
+const $q = useQuasar();
+
+const openDialog = () => {
+  $q.dialog({ component: DialogExample });
+};
 </script>
 
 <style lang="sass" scoped>
