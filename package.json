@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@quasar/extras": "^1.0.0",
-    "@unleash/proxy-client-vue": "^0.0.4",
+    "@unleash/proxy-client-vue": "https://github.com/vojvodics/proxy-client-vue",
     "quasar": "^2.6.0",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0"

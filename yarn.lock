@@ -333,10 +333,9 @@
     "@typescript-eslint/types" "5.44.0"
     eslint-visitor-keys "^3.3.0"
 
-"@unleash/proxy-client-vue@^0.0.4":
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/@unleash/proxy-client-vue/-/proxy-client-vue-0.0.4.tgz#297995352a888dcf8bf77fc732b1b7adb7760ee2"
-  integrity sha512-zOPx0tmetgRnmN0AB9UOssoPH7UcyaYUkZCd2Ge3HvQtgYi/cjE+c79NDIDJ3zudhIf5IRuJ/inNei2d2wXqMw==
+"@unleash/proxy-client-vue@https://github.com/vojvodics/proxy-client-vue":
+  version "0.0.5"
+  resolved "https://github.com/vojvodics/proxy-client-vue#68d99ad84aa755c4a8861191357caf9a34e4bee5"
   dependencies:
     unleash-proxy-client "^2.1.0"
     vue "^3.2.25"
